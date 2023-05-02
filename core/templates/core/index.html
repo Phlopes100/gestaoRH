@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block main %}
+<h1>Tudo certo</h1>
+<h4>Olá {{usuario.funcionario.nome}}</h4>
+<a href="{% url 'list_funcionarios' %}">Gerenciar Funcionarios</a>
+<a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a>
+<a href="{% url 'list_hora_extra' %}">Gerenciar Banco de Horas</a>
+<a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+{% if usuario.funcionario.empresa %}
+<a href="{% url 'edit_empresa' usuario.funcionario.empresa_id %}">Editar Empresa</a>
+{% else %}
+<a href="{% url 'create_empresa' %}">Criar empresa</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block main %}
+Novo
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button class="btn-info" type="submit">Salvar</button>
+</form>
+{% endblock %}

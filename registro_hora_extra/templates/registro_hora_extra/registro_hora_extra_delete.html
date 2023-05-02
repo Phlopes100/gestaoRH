@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block main %}
+<form method="POST">
+    {% csrf_token %}
+    <h1>Você tem certeza que deseja deletar {{object}}</h1>
+    <button type="submit" class="btn btn-danger">Deletar</button>
+    <a href="{% url 'list_hora_extra' %}" class="btn btn-info">Voltar</a> 
+{% endblock %}

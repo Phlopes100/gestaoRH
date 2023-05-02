@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block main %}
+Editar
+<form method="POST">
+    {{form}}
+    <button class="btn btn-primary" type="submit">Salvar</button>
+</form>
+<a href="{% url 'create_documento' object.id %}" class="btn btn-primary">Adicionar documento</a>
+{% for documento in object.documento_set.all %}
+<a href="{{documento.arquivo.url }}">{{documento}}</a>
+{% endfor %}
+{% endblock %}
